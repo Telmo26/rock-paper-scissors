@@ -23,9 +23,11 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
-    let humanChoice = humanChoice.toLowerCase();
+    lowerHumanChoice = humanChoice.toLowerCase();
+    console.log(lowerHumanChoice + " chosen")
+    console.log("Computer chose : " + computerChoice)
 
-    switch(humanChoice) {
+    switch(lowerHumanChoice) {
         case "rock":
             switch(computerChoice) {
                 case "rock":
@@ -40,6 +42,7 @@ function playRound(humanChoice, computerChoice) {
                     humanScore++;
                     break;
             }
+            break;
         case "paper":
             switch(computerChoice) {
                 case "rock":
@@ -54,6 +57,7 @@ function playRound(humanChoice, computerChoice) {
                     computerScore++;
                     break;
             }
+            break;
         case "scissors":
             switch(computerChoice) {
                 case "rock":
@@ -68,6 +72,7 @@ function playRound(humanChoice, computerChoice) {
                     console.log("You tie!")
                     break;
             }
+            break;
     }
 
 }
@@ -75,4 +80,4 @@ function playRound(humanChoice, computerChoice) {
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-playRound(humanSelection, humanSelection);
+playRound(humanSelection, computerSelection);
