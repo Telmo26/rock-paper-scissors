@@ -27,15 +27,18 @@ function playRound(humanChoice, computerChoice) {
         case "rock":
             switch(computerChoice) {
                 case "rock":
-                    results.textContent = "You tie!"
+                    results.textContent = "You tie!";
+                    results.style.color = "orange";
                     break;
                 case "paper":
                     results.textContent = "You lose! Paper beats rock."
                     computerScore++;
+                    results.style.color = "red";
                     break;
                 case "scissors":
                     results.textContent = "You win! Rock beats scissors."
                     humanScore++;
+                    results.style.color = "green";
                     break;
             }
             break;
@@ -44,13 +47,16 @@ function playRound(humanChoice, computerChoice) {
                 case "rock":
                     results.textContent = "You win! Paper beats rock."
                     humanScore++;
+                    results.style.color = "green";
                     break;
                 case "paper":
                     results.textContent = "You tie!"
+                    results.style.color = "orange";
                     break;
                 case "scissors":
                     results.textContent = "You lose! Scissors beats paper."
                     computerScore++;
+                    results.style.color = "red";
                     break;
             }
             break;
@@ -59,13 +65,16 @@ function playRound(humanChoice, computerChoice) {
                 case "rock":
                     results.textContent = "You lose! Rock beats scissors."
                     computerScore++;
+                    results.style.color = "red";
                     break;
                 case "paper":
                     results.textContent = "You win! Scissors beats paper."
                     humanScore++;
+                    results.style.color = "green";
                     break;
                 case "scissors":
                     results.textContent = "You tie!"
+                    results.style.color = "orange";
                     break;
             }
             break;
@@ -98,13 +107,18 @@ buttons.forEach(button => {
             playRound(button.id, computerSelection);
 
             score.textContent = `Human score: ${humanScore}
-            Computer score: ${computerScore}`;
+Computer score: ${computerScore}`;
 
             if (computerScore === 5 || humanScore === 5) {
                 const winner = document.createElement("p")
                 winner.classList.add("final")
-                if (computerScore === 5) winner.textContent = "The computer wins!"
-                else if (humanScore === 5) winner.textContent = "You win!"
+                if (computerScore === 5) {
+                    winner.textContent = "The computer wins!";
+                }
+                else if (humanScore === 5) {
+                    winner.textContent = "You win!";
+                    winner.classList.toggle("win")
+                }
                 score.parentNode.appendChild(winner)
             } 
         }

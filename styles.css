@@ -1,3 +1,44 @@
 * {
     box-sizing: border-box;
 }
+
+.container {
+    margin: auto;
+    border: 1em solid lightblue;
+    padding: 0px 8px;
+    max-width: 520px;
+}
+
+.description {
+    text-align: center;
+}
+
+.player {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    border-radius: 8px;
+    border: 0px thin gray;
+}
+
+button:hover {
+    background-color: lightgray;
+}
+
+.results {
+    font-weight: bold;
+}
+
+.final {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bolder;
+    color: red;
+}
+
+.win {
+    color: green;
+}
